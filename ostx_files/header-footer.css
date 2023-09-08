@@ -54,7 +54,7 @@
   right: 0;
   top: 0;
   color: #231f20;
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
   text-transform: uppercase;
   font-size: 11px;
   text-align: center;
@@ -158,8 +158,6 @@ header {
   position: absolute;
   width: 100%;
   padding-right: 55px;
-  /* float: right; */
-  margin-left: 455px;
 }
 
 @media (min-width: 1025px) {
@@ -168,13 +166,6 @@ header {
     font-size: 19px;
     padding-right: 0;
     height: 90px;
-    margin-left: 405px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .nav {
-    margin-left: 450px;
   }
 }
 
@@ -195,6 +186,10 @@ header {
 
 ul.primary_nav {
   margin-bottom: 0;
+}
+
+.nav ul.primary_nav {
+  float: right;
 }
 
 @media (min-width: 1025px) {
@@ -220,8 +215,6 @@ ul.primary_nav {
   display: none;
   height: 50px;
   line-height: 50px;
-  margin-left: 2px;
-  margin-right: 2px;
 }
 
 @media (min-width: 1025px) {
@@ -391,6 +384,12 @@ li a.active {
   position: relative;
 }
 
+@media (min-width: 769px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+
 @media (min-width: 1300px) {
   .wrapper {
     padding: 0 60px;
@@ -402,6 +401,8 @@ li a.active {
   width: 100%;
   float: left;
   direction: ltr;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (min-width: 1025px) {
@@ -423,6 +424,12 @@ li a.active {
   z-index: 32;
   left: -10px;
 }
+
+/* @media (min-width: 768px) and (max-width: 1025px) {
+  .logo {
+    padding-left: 18px;
+  }
+} */
 
 @media (min-width: 1025px) {
   .logo {
@@ -456,11 +463,13 @@ li a.active {
   }
 }
 
-.fixed .nav .primary_link {
-  height: 50px;
-  line-height: 50px;
-  font-size: 16px;
-  display: block;
+@media (min-width: 1025px) and (max-width: 1800px) {
+  .fixed .nav .primary_link {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    display: block;
+  }
 }
 
 .fixed .nav .primary_link.donate_link {
@@ -471,6 +480,33 @@ li a.active {
   line-height: 50px;
   padding-left: 22px;
   padding-right: 22px;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .fixed .nav .primary_link.donate_link {
+    font-size: 11px;
+    line-height: 20px;
+    padding: 10px 10px 0 10px;
+    box-shadow: none;
+  }
+}
+
+.fixed .nav .dropdown_mask {
+  height: 50px;
+}
+
+.fixed .nav .dropdown_mask {
+  border-bottom: 1px dotted rgba(35, 31, 32, 0.2);
+}
+
+.nav .dropdown_mask {
+  transition: all 0.2s ease 0s;
+  position: absolute;
+  z-index: 31;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
 }
 
 /* HEADER THE END */
