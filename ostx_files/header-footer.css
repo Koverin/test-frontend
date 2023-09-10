@@ -330,10 +330,12 @@ li a.active {
   color: #ee0000;
 }
 
-.nav .primary_link.donate_link:hover {
-  color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background-color: #31a19a;
+@media (min-width: 1025px) {
+  .nav .primary_link.donate_link:hover {
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #31a19a;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -754,3 +756,58 @@ footer .social a svg {
 }
 
 /* FOOTER THE END */
+
+/* POPUP */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.follow-btn {
+  position: absolute;
+  top: 45px;
+  left: 75px;
+  display: block;
+  margin: 0 auto;
+  padding: 17px 40px;
+  background-color: #ee0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.follow-btn:hover {
+  background-color: #31a19a;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+/* POPUP END */
