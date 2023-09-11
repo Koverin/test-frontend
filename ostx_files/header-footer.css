@@ -811,3 +811,20 @@ footer .social a svg {
 }
 
 /* POPUP END */
+
+/* DATE TIME */
+
+.sticky-header {
+  position: sticky;
+  top: 100px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.date-time-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* DATE TIME END */

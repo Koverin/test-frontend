@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const followButton = document.querySelector(".follow-btn");
   const closeButton = document.querySelector(".popup-close");
   const overlay = document.querySelector(".overlay");
-
-  const scrollTriggerPosition = 8500;
+  const targetElement = document.querySelector(".start-popup");
 
   function showPopup() {
     popupContainer.style.display = "block";
@@ -17,9 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", function () {
-    const scrollY = window.scrollY || window.pageYOffset;
-
-    if (scrollY >= scrollTriggerPosition) {
+    if (isElementInViewport(targetElement)) {
       showPopup();
     }
   });
@@ -29,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (routeElement) {
       routeElement.scrollIntoView({ behavior: "smooth", block: "center" });
 
-      setTimeout(hidePopup, 500);
+      setTimeout(hidePopup, 1000);
     }
   });
 
@@ -40,4 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
       evt.preventDefault();
     }
   });
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
 });
